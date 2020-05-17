@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const { NotFoundError, Conflict } = require('../errors/errors');
+const { SECRET_KEY } = require('../config');
 
-const { SECRET_KEY } = process.env;
 const opts = { runValidators: true };
 
 module.exports.getAllUsers = (req, res, next) => {

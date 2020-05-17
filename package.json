@@ -26,13 +26,10 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
-    "express": "^4.17.1",
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-    "-": "0.0.1",
     "@hapi/joi": "^17.1.1",
-    "D": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "celebrate": "^12.1.1",

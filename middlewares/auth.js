@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { UnauthorizedError } = require('../errors/errors');
-
-const { SECRET_KEY } = process.env;
+const { SECRET_KEY } = require('../config');
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
@@ -9,8 +8,7 @@ module.exports = (req, res, next) => {
 
   if (!cookie) {
     if (!authorization || !authorization.startsWith('Bearer ')) {
-      const err = new UnauthorizedError('Авторизация не выполнена');
-      return res.status(err.statusCode || 500).send({ message: err.message || 'На сервере произошла ошибка' });
+      return next(new UnauthorizedError('Авторизация не выполнена'));
     }
   }
   const token = cookie || authorization.replace('Bearer ', '');
@@ -18,8 +16,7 @@ module.exports = (req, res, next) => {
   try {
     payload = jwt.verify(token, SECRET_KEY);
   } catch (err) {
-    const error = new UnauthorizedError('Авторизация не выполнена');
-    return res.status(error.statusCode || 500).send({ message: error.message || 'На сервере произошла ошибка' });
+    return next(new UnauthorizedError('Авторизация не выполнена'));
   }
   req.user = payload;
   return next();
