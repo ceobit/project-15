@@ -1,8 +1,7 @@
 const { accountSignIn } = require('./accountSignIn');
 const { accountSignUp } = require('./accountSignUp');
-const { schemaCreateCard } = require('./cards');
-const { schemaUpdateUser, schemaUpdateUserAvatar } = require('./users');
-const { schemaValidateId } = require('./commonValidate');
+const { schemaCreateCard, schemaValidateCardId } = require('./cards');
+const { schemaUpdateUser, schemaUpdateUserAvatar, schemaValidateUserId } = require('./users');
 
 module.exports = {
   accountSignIn,
@@ -10,5 +9,6 @@ module.exports = {
   schemaCreateCard,
   schemaUpdateUser,
   schemaUpdateUserAvatar,
-  schemaValidateId,
+  schemaValidateCardId,
+  schemaValidateUserId,
 };

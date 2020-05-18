@@ -22,7 +22,6 @@ module.exports.deleteCard = (req, res, next) => {
     .orFail(() => new NotFoundError('Данные в базе данных не обнаружены'))
     .then((card) => {
       if (!card.owner.equals(req.user._id)) {
-        // return Promise.reject(new Forbidden('Нет прав на удаление карточки'));
         throw new Forbidden('Нет прав на удаление карточки');
       }
       return Card.findByIdAndRemove({ _id: cardId })

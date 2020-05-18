@@ -1,4 +1,5 @@
 const { Joi } = require('celebrate');
+const validator = require('validator');
 
 const schemaUpdateUser = {
   body: Joi.object().keys({
@@ -12,11 +13,24 @@ const schemaUpdateUser = {
 const schemaUpdateUserAvatar = {
   body: Joi.object().keys({
     avatar: Joi.string()
-      .pattern(new RegExp('(?:http|https):\\/\\/((?:[\\w-]+)(?:\\.[\\w-]+)+)(?:[\\w.,@?^:\\/~+#-]*[\\w@?^\\/~+#-])?')).required(),
+      .required().custom((value, helpers) => {
+        if (validator.isURL(value)) {
+          return value;
+        }
+        return helpers.message('Ссылка имеет не верный формат');
+      }),
+  }),
+};
+
+const schemaValidateUserId = {
+  params: Joi.object().keys({
+    userId: Joi.string()
+      .alphanum().length(24),
   }),
 };
 
 module.exports = {
   schemaUpdateUser,
   schemaUpdateUserAvatar,
+  schemaValidateUserId,
 };
