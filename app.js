@@ -52,13 +52,6 @@ app.use(cookieParser());
 //  логгер запросов
 app.use(requestLogger);
 
-//  краш-тест
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
-
 //  Роуты без без авторизации
 app.post('/signin', celebrate(accountSignIn), login);
 app.post('/signup', celebrate(accountSignUp), createUser);
