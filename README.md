@@ -2,36 +2,30 @@
 
 _v01.4_ after review #3
 
-Проект, реализованный в рамках проектной работы № 15 Яндекс практикума.
+## Backend of the project picture gallery
 
 _ip 84.201.146.240_<br>
 _www.api.it-todo.ru_
 
-## Задачи: 
-
-1.  Реализовал централизованную обработку ошибок;
-2.  Добавил валидацию запросов;
-3.  Реализовал логгирование запросов и ошибок;
-4.  Создал облачный сервер и развернул API;
-5.  Создал .env файл 
-6.  В проекте реализованы следующие роуты: 
+## Tasks: 
+ 
 <ul>
-<li>POST /signup — создать нового пользователя</li>
-<li>POST /signin — авторизация пользователя</li>
-<li>GET /users - получает всех пользователей</li>
-<li>GET /users/:usersId - получает конкретного пользователя</li>
-<li>PATCH /users/me — обновляет профиль</li>
-<li>PATCH /users/me/avatar — обновляет аватар</li>
-<li>GET /cards - получает все карточки</li>
-<li>POST /cards - создает карточку</li>
-<li>DELETE /cards/:cardId - удаляет карточку</li>
-<li>PUT /cards/:cardId/likes — поставить лайк карточке</li>
-<li>DELETE /cards/:cardId/likes — убрать лайк с карточки</li>
+<li>POST /signup — create a new user </li>
+<li>POST /signin — user authorization </li>
+<li>GET /users - gets all users </li>
+<li>GET /users/:usersId - gets a specific user </li>
+<li>PATCH /users/me — updates profile </li>
+<li>PATCH /users/me/avatar — updates the avatar </li>
+<li>GET /cards - receives all cards </li>
+<li>POST /cards - creates a card </li>
+<li>DELETE /cards/:cardId - deletes the card </li>
+<li>PUT /cards/:cardId/likes — like the card </li>
+<li>DELETE /cards/:cardId/likes — remove like from card </li>
 </ul>
 
-## Как запустить
+## How to run
 
-1. Клонировать репозиторий
+1. clone репозиторий
 `git clone https://github.com/ceobit/project-15`
 2. Установить все зависимости проекта из package.json
 `npm install`
@@ -41,7 +35,7 @@ _www.api.it-todo.ru_
 ## Использованные технологии
 1. Node.js
 2. Express.js
-3. Ванильный JS
+3. Pure JS
 4. Git
 
 
