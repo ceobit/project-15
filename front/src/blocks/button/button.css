@@ -1,0 +1,19 @@
+.button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  display: block;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline-color: greenyellow;
+}
+
+.mesto__button {
+  font-size: 36px;
+}
+
+.profil__button {
+  font-size: 14px;
+}

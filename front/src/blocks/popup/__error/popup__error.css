@@ -1,0 +1,19 @@
+input:invalid + .popup__error {
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0px 6px 13px;
+    margin-bottom: 24px;
+    margin-top: 0;
+    visibility: visible;
+}
+
+input:valid + .popup__error {
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0px 6px 13px;
+    margin-bottom: 24px;
+    margin-top: 0;
+    visibility: hidden;
+}

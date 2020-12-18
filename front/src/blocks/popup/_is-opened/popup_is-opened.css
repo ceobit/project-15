@@ -1,0 +1,8 @@
+.popup.popup_is-opened {
+  display: flex;
+}
+
+.popup__avatar.popup_is-opened {
+  display: flex;
+}
+
