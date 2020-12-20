@@ -29,7 +29,7 @@ import '../pages/index.css';
         formName: "profil",
         nameFieldOne: "name",
         nameFieldTwo: "job",
-        FieldOne: "Username",
+        FieldOne: "First and Last Names",
         FieldTwo: "About Me",
         valueFieldOne: document.querySelector('.user-info__name').textContent,
         valueFieldTwo: document.querySelector('.user-info__job').textContent,
@@ -41,21 +41,21 @@ import '../pages/index.css';
 
     const playList = document.querySelector('.places-list');
 
-    // const api = new Api({
-    //     baseUrl: 'https://praktikum.tk/cohort8/',
-    //     headers: {
-    //         authorization: '63a34e12-9976-4dac-b99a-14f9c916a7bd',
-    //         'Content-Type': 'application/json'
-    //     }
-    // });
+    const api = new Api({
+        baseUrl: 'https://nomoreparties.co/cohort8/',
+        headers: {
+            authorization: '63a34e12-9976-4dac-b99a-14f9c916a7bd',
+            'Content-Type': 'application/json'
+        }
+    });
 
-  const api = new Api({
-    baseUrl: 'localhost:3000/',
-    headers: {
-      // authorization: '63a34e12-9976-4dac-b99a-14f9c916a7bd',
-      'Content-Type': 'application/json'
-    }
-  });
+  // const api = new Api({
+  //   baseUrl: 'http://localhost:3000/',
+  //   headers: {
+  //     // authorization: '63a34e12-9976-4dac-b99a-14f9c916a7bd',
+  //     'Content-Type': 'application/json'
+  //   }
+  // });
 
     const card = new Card(api);
 
@@ -83,6 +83,10 @@ import '../pages/index.css';
         .addEventListener('click', popup.open.bind(popup));
 
     document.querySelector('.user-info__photo')
+        .addEventListener('click', popup.open.bind(popup));
+
+    debugger
+    document.querySelector('.root__auth')
         .addEventListener('click', popup.open.bind(popup));
 
     playList.addEventListener('click', popup.open.bind(popup));
