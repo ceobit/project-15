@@ -13,7 +13,7 @@
 2. Express js
 3. Mongo DB
 3. Core JS
-4. Webpack  
+4. Webpack
 
 
 
